@@ -30,3 +30,19 @@ class Product(models.Model):
         verbose_name = "продукт"
         verbose_name_plural = "продукты"
         ordering = ["name"]
+
+class Contact(models.Model):
+    name = models.CharField(max_length=150, verbose_name="Имя")
+    phone = models.CharField(max_length=50, verbose_name="Телефон")
+    email = models.EmailField(blank=True, null=True, verbose_name="Email")
+    message = models.TextField(blank=True, null=True, verbose_name="Сообщение")
+    created_at = models.DateTimeField(auto_now_add=True, verbose_name="Дата создания")
+
+    def __str__(self):
+        return f"{self.name} ({self.phone})"
+
+    class Meta:
+        verbose_name = "Контакт"
+        verbose_name_plural = "Контакты"
+        ordering = ['-created_at']
+
