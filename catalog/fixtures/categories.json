@@ -1,0 +1,26 @@
+[
+{
+    "model": "catalog.category",
+    "pk": 1,
+    "fields": {
+        "name": "Телефоны",
+        "description": "Смартфоны и аксессуары"
+    }
+},
+{
+    "model": "catalog.category",
+    "pk": 2,
+    "fields": {
+        "name": "Ноутбуки",
+        "description": "Ноутбуки и комплектующие"
+    }
+},
+{
+    "model": "catalog.category",
+    "pk": 3,
+    "fields": {
+        "name": "Аксессуары",
+        "description": "Чехлы, зарядки, наушники"
+    }
+}
+]

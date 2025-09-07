@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Skystore</title>
+    <title>Skystore - Контакты</title>
     <link rel="stylesheet" href="/static/css/bootstrap.min.css">
 </head>
 <body>
@@ -35,9 +35,27 @@
                         </tr>
                         <tr>
                             <td class="w-25">Адрес</td>
-                            <td>Redmond,WA,98052-6399</td>
+                            <td>Redmond, WA, 98052-6399</td>
                         </tr>
                     </table>
+                </div>
+            </div>
+            <div class="card mb-4 box-shadow">
+                <div class="card-header">
+                    <h4 class="my-0 font-weight-normal">Все контакты</h4>
+                </div>
+                <div class="card-body">
+                    <ul class="list-group">
+                        {% for contact in contacts %}
+                        <li class="list-group-item">
+                            <strong>{{ contact.name }}</strong> — {{ contact.phone }}
+                            {% if contact.email %} — {{ contact.email }}{% endif %}
+                            <span class="text-muted float-end">{{ contact.created_at|date:"d.m.Y H:i" }}</span>
+                        </li>
+                        {% empty %}
+                        <li class="list-group-item">Контакты отсутствуют</li>
+                        {% endfor %}
+                    </ul>
                 </div>
             </div>
         </div>
@@ -70,7 +88,6 @@
             </div>
         </div>
     </div>
-
     <footer class="pt-4 my-md-5 pt-md-5 border-top">
         <div class="row">
             <div class="col-12 col-md">
